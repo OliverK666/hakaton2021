@@ -12,49 +12,7 @@ html, body{
 }
 
 
-section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
-@import "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap";
-.wrapper{max-width:1140px;padding-left:1rem;padding-right:1rem;margin-left:auto;margin-right:auto}
-*,*:before,*:after{box-sizing:border-box}
-a{text-decoration:none;color:#aaa}
-html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-body{font-family:roboto,sans-serif}.sr-only{position:absolute;clip:rect(1px,1px,1px,1px);padding:0;border:0;height:1px;width:1px;overflow:hidden}
-.button{-webkit-appearance:none;-moz-appearance:none;appearance:none;color:#ff0000;background-color:#242526;min-width:120px;padding:.5rem 1rem;border-radius:5px;text-align:center}
-.button svg{display:inline-block;vertical-align:middle;width:24px;height:24px;fill:#fff}
-.button span{display:none}@media(min-width:600px){.button span{display:initial}}.button--icon{min-width:initial;padding:.5rem}
-.brand{font-weight:700;font-size:20px}.site-header{position:relative;background-color:#242526;}.site-header__wrapper{padding-top:1rem;padding-bottom:1rem}@media(min-width:600px){.site-header__wrapper{display:flex;justify-content:space-between;align-items:center;padding-top:0;padding-bottom:0}}@media(min-width:600px){.nav__wrapper{display:flex}}@media(max-width:599px){.nav__wrapper{position:absolute;top:100%;right:0;left:0;z-index:-1;background-color:#242526;visibility:hidden;opacity:0;transform:translateY(-100%);transition:transform .3s ease-out,opacity .3s ease-out;}.nav__wrapper.active{visibility:visible;opacity:1;transform:translateY(0)}}.nav__item a{display:block;padding:1.5rem 1rem}.nav__toggle{display:none}@media(max-width:599px){.nav__toggle{display:block;position:absolute;right:1rem;top:1rem}}
 
-a:hover{
-	color: #ffffff;
-	transition: width 0.2s;
-}
-@media (min-width:600px){
-.underlineHover:after {
-  display: block;
-  left: 0;
-  bottom: -10px;
-  width: 0;
-  height: 2px;
-  background-color: #3d3d3d;
-  content: "";
-  transition: width 0.2s;
-}}
-@media (min-width:600px){
-.underlineHover:hover:after{
- width: 100%;
- 
-}}
-
-.underlineHover:hover:after{
-  width: 100%;
- 
-}
-
-.Navigation_Bar_Border{
-	border-bottom-color: #ffffff;
-	border-bottom-style: solid;
-	border-bottom-width: 0.5px;
-}
 footer {
 	background-color: #d1d1d1;
 	padding: 20px;
