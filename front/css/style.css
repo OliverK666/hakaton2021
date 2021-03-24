@@ -1,5 +1,7 @@
-html{
-	background-color:#181818; 
+
+html, body{
+	background-color: #181818;
+	margin:0;
 }
 .header {
     z-index: 32;
@@ -8,9 +10,7 @@ html{
     color: #aaaaaa;
     background-color: 121212;
 }
-body{
-	margin: 0;
-}
+
 
 section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
 @import "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap";
@@ -81,3 +81,49 @@ footer a:hover {
 img{
 	width: 100%;
 }
+.dark-background{
+	background-color: #181818;
+}
+h1{
+	color: #aaaaaa;
+	text-align: center;
+	padding-top: 80px;
+	font-size: 100px;
+}
+@media (max-width:600px){
+h1:hover{
+	
+	font-size: 110px;
+	transition:font-size 0.2s;
+}}
+@media (min-width:600px){
+h1:hover{
+	
+	font-size: 150px;
+	transition:font-size 0.5s;
+}}
+
+section{
+	background-color: #181818;
+}
+
+@keyframes typingAnim{
+  from { width: 0 }
+  to { width: 100% }
+}
+
+.typing > *{
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typingAnim 5s steps(50);
+}
+
+p{
+	font-size: 40px;
+	color: #fff;
+}
+@keyframes typingAnim{
+  from { width: 0 }
+  to { width: 100% }
+}
+
