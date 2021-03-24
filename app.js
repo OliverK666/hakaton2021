@@ -1,57 +1,77 @@
 var express = require("express");
+var app = express();
 var bodyParser = require("body-parser");
-var items = [];
-var router = express.Router();
-router.use(bodyParser.urlencoded({
+var mongoose = require("mongoose");
+
+var gameroomDetails = require("./back/gameroomDetails");
+const gameroomDetails = require("./back/gameroomDetails");
+
+var url = "mongodb://localhost:27017/hakaton2021";
+mongoose.connect(url, {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false});
+
+app.use(bodyParser.urlencoded({
     extended: true
 }));
-router.use(bodyParser.json());
-router.route("/")
-    .get(function(req, res, next) {
-        res.send({
-            status: "Items found",
-            items: items
+app.use(bodyParser.json());
+
+var port = 3000;
+
+var gameroomDetailsRouter = express.Router();
+
+gameroomDetailsRouter
+    .get("/:id", function(req, res, next) {
+        gameroomDetails.findOne({
+            "_id": req.params.id
+        }).exec(function(err, entry) {
+            if (err) next(err);
+            res.json(entry);
         });
     })
-    .post(function(req, res, next) {
-        items.push(req.body);
-        res.send({
-            status: "Item added",
-            itemId: items.length - 1
+    .get("/", function(req, res) {
+        gameroomDetails.find({}, function(err, data, next) {
+            res.json(data);
         });
     })
-    .put(function(req, res, next) {
-        items = req.body;
-        res.send({
-            status: "Items replaced"
+    .post("/", function(req, res, next) {
+        var GameroomDetails = new gameroomDetails(req.body);
+        GameroomDetails.save(function(err, entry) {
+            if (err) next(err);
+            res.json(entry);
         });
     })
-    .delete(function(req, res, next) {
-        items = [];
-        res.send({
-            status: "Items cleared"
+    .put("/:id", function(req, res, next) {
+        gameroomDetails.findById({
+            "_id": req.params.id
+        }, function(err, gameroomDetails) {
+            if (err) next(err);
+            gameroomDetails.set(req.body);
+            gameroomDetails.save(function(err, entry) {
+                if (err) next(err);
+                res.json(entry);
+            });
+        });
+    })
+    .delete("/:id", function(req, res, next) {
+        gameroomDetails.findOneAndRemove({
+            "_id": req.params.id
+        }, function(err, gameroom, successIndicator) {
+            if (err) next(err);
+            res.json(successIndicator);
         });
     });
-router.router("/:id")
-    .get(function(req, res, next) {
-        var id = req.params.id;
-        if (id && items[Number(id)]) {
-            res.send({
-                status: "Item found",
-                item: items[Number(id)]
-            });
-        } else {
-            res.status(404).send({
-                status: "Not found"
-            });
-        }
-    })
-    .all(function(req, res, next) {
-        res.status(501).send({
-            status: "Not implemented"
-        })
+
+app.use("/api/gameroomDetails", gameroomDetailsRouter);
+
+app.use(function(err, req, res, next) {
+    var message = err.message;
+    var error = err.error || err;
+    var status = err.status || 500;
+
+    res.status(status).json({
+        message: message,
+        error: error
     });
-var app = express()
-    .use("/items", router)
-    .listen(3000);
-console.log("Server started and listeting on port 3000");
+});
+
+app.listen(port);
+console.log("Server is running and listening on port " + port);
