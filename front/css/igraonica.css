@@ -87,6 +87,27 @@ h1{
 	padding-top: 20px;
 	padding-bottom: 20px;
 	color: #fff;
+  font-family: 'Lucida Console', Monaco, monospace;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
 
+.dropdown-content {
+  margin-left: 80px;
+  display:none;
+  position:relative;
+  background-color: #181818;
+  min-width: 100%;
+  box-shadow: #181818;
+  padding: 30px 40px;
+  z-index: 1;
+}
+.boja_teksta{
+  color: #fff;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
