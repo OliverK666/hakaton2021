@@ -6,13 +6,8 @@ console.log("Connected correctly to server");
 
 var gameroomDetails = require("./back/gameroomDetails");
 
-var g = new gameroomDetails({
-    name: "Kum",
-    description: "Najbolja igraonica"
-});
-
-g.save(function(err) {
-    if(err == null) {
+gameroomDetails.findOneAndUpdate({"name": "Kum"}, {"description": "Najkul igraonica"}, function(err, g) {
+    if(err == null){
         console.log(g);
     } else {
         console.log(err);

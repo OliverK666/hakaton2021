@@ -6,13 +6,10 @@ console.log("Connected correctly to server");
 
 var gameroomDetails = require("./back/gameroomDetails");
 
-var g = new gameroomDetails({
-    name: "Kum",
-    description: "Najbolja igraonica"
-});
+var query = gameroomDetails.where({"name":"Kum"});
 
-g.save(function(err) {
-    if(err == null) {
+query.findOne(function(err, g) {
+    if(err == null){
         console.log(g);
     } else {
         console.log(err);
