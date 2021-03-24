@@ -3,16 +3,13 @@ var MongoClient = require("mongodb").MongoClient;
 var url = "mongodb://localhost:27017";
 
 MongoClient.connect(url, (err, client) => {
-	var db = client.db("igraonice");
+    var db = client.db("igraonice");
 	if(err == null){
 		console.log("Connected to MongoDB");
 		var igraonice = db.collection("igraonice");
-		igraonice.find({"name":"Kum"}).toArray(function(err, docs) {
+		igraonice.insertOne({"name":"Kum"}, function(err, r) {
 			if(err == null){
-				if(docs.length == 0)
-					console.log("Ne postoji ta igraonica");
-				for(i=0;i<docs.length;i++)
-					console.log(docs[i]);
+				console.log(r.ops);
 			} else {
 				console.log(err);
 			}
