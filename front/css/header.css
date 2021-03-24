@@ -25,7 +25,10 @@ body{font-family:roboto,sans-serif}
 .nav__item a{display:block;padding:1.5rem 1rem}
 .nav__toggle{display:none}
 @media(max-width:599px){.nav__toggle{display:block;position:absolute;right:1rem;top:1rem;}}
-
+a:{
+  color: #aaa;
+  font-family: "Fira Mono",monospace,'Roboto',-apple-system,BlinkMacSystemFont,'Ubuntu','Helvetica Neue',sans-serif;
+}
 a:hover{
 	color: #ffffff;
 	transition: width 0.2s;

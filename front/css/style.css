@@ -13,6 +13,12 @@ html, body{
 
 
 
+
+.Navigation_Bar_Border{
+	border-bottom-color: #ffffff;
+	border-bottom-style: solid;
+	border-bottom-width: 0.5px;
+}
 footer {
 	background-color: #d1d1d1;
 	padding: 20px;
@@ -43,12 +49,13 @@ img{
 	background-color: #181818;
 }
 h1{
-	color: #aaaaaa;
+	color: #fff;
 	text-align: center;
 	padding-top: 80px;
 	font-size: 100px;
+	font-family: "Fira Mono",monospace,'Roboto',-apple-system,BlinkMacSystemFont,'Ubuntu','Helvetica Neue',sans-serif;
 }
-@media (max-width:600px){
+@media (max-width:599px){
 h1:hover{
 	
 	font-size: 110px;
@@ -60,10 +67,32 @@ h1:hover{
 	font-size: 150px;
 	transition:font-size 0.5s;
 }}
+p{
+	font-size: 24px;
+	color: #aaa;
+	font-family: "Fira Mono",monospace,'Roboto',-apple-system,BlinkMacSystemFont,'Ubuntu','Helvetica Neue',sans-serif;
+	
+}
 
 section{
 	background-color: #181818;
 }
+
+.card{
+	width: 60%;
+	height: 300px;
+	max-width: 750px;
+	align-self: center;
+	border-style: solid;
+	border-color: #fff;
+	border-width: 2px;
+	margin-left: 20%;
+	margin-right: 20%;
+	padding: 20px;
+	box-shadow: 5px 5px white, 10px 10px #181818, 15px 15px white;
+
+}
+
 
 @keyframes typingAnim{
   from { width: 0 }
@@ -76,10 +105,7 @@ section{
   animation: typingAnim 5s steps(50);
 }
 
-p{
-	font-size: 40px;
-	color: #fff;
-}
+
 @keyframes typingAnim{
   from { width: 0 }
   to { width: 100% }
