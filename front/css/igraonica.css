@@ -20,3 +20,18 @@ h1
   text-align: center;
   color: #aaaaaa;
 }
+.image-igraonica{
+	width: 400px;
+}
+@media only screen and (min-width : 600px) {
+	.telefon-foto {
+	text-align: center;
+	}
+}
+.igraonica-tekst {
+  padding: 20px;
+  margin-bottom: 10px;
+}
+.google-map{
+  height: : 400px;
+}
