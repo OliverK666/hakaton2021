@@ -1,0 +1,22 @@
+body
+{
+  background-color: #181818;
+}
+img.pocetna
+{
+  width: 100%;
+  height: 100%;
+}
+.veci
+{
+  height: 500px;
+}
+p
+{
+  color: #aaaaaa;
+}
+h1
+{
+  text-align: center;
+  color: #aaaaaa;
+}
