@@ -7,7 +7,12 @@ var gameroomDetails = require("./back/gameroomDetails");
 const gameroomDetails = require("./back/gameroomDetails");
 
 var url = "mongodb://localhost:27017/hakaton2021";
-mongoose.connect(url, {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false});
+mongoose.connect(url, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+});
 
 app.use(bodyParser.urlencoded({
     extended: true
