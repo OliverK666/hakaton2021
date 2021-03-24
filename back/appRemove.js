@@ -8,7 +8,7 @@ var gameroomDetails = require("./back/gameroomDetails");
 
 gameroomDetails.findOneAndRemove({"name": "Kum"}, function(err, g, r) {
     if(err == null){
-        console.log("Deleted: ");
+        console.log("Deleted: ")
         console.log(g);
     } else {
         console.log(err);
