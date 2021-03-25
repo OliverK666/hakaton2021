@@ -244,7 +244,50 @@ input[type=text]:placeholder {
 .underlineHover:hover:after{
   width: 100%;
 }
+#emailError {
+  color: white;
+  display: none;
+  font-size: 0.8em;
+}
 
+#emailError.visible {
+  display: block;
+}
+
+#usernameError {
+  color: white;
+  display: none;
+  font-size: 0.8em;
+}
+
+#usernameError.visible {
+  display: block;
+}
+#passwordError {
+  color: white;
+  display: none;
+  font-size: 0.8em;
+}
+
+#passwordError.visible {
+  
+  display: block;
+}
+
+#con_passwordError {
+  color: white;
+  display: none;
+  font-size: 0.8em;
+}
+
+#con_passwordError.visible {
+  display: block;
+}
+
+
+input.invalid {
+  border-color: red;
+}
 
 
 /* OTHERS */
