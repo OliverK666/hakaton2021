@@ -1,82 +1,160 @@
-var express = require("express");
-var app = express();
-var bodyParser = require("body-parser");
-var mongoose = require("mongoose");
+const express = require("express");
+const app = express();
+const connectDB = require("./back/database");
+const gameroom = require("./back/gameroom");
+//const event = require("./back/event");
 
-var gameroomDetails = require("./back/gameroomDetails");
-const gameroomDetails = require("./back/gameroomDetails");
+const port = 3000;
 
-var url = "mongodb://localhost:27017/hakaton2021";
-mongoose.connect(url, {
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false
+app.listen(port, () => {
+    console.log(`Listening on port: ${PORT}`);
 });
 
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
-app.use(bodyParser.json());
+connectDB();
+app.use(express.static("front"));
 
-var port = 3000;
+app.get("/api/timovi", async (req, res) => {
+    try {
+        const sviTimovi = await Tim.find();
 
-var gameroomDetailsRouter = express.Router();
-
-gameroomDetailsRouter
-    .get("/:id", function(req, res, next) {
-        gameroomDetails.findOne({
-            "_id": req.params.id
-        }).exec(function(err, entry) {
-            if (err) next(err);
-            res.json(entry);
+        res.json({
+            uspesno: true,
+            timovi: sviTimovi,
         });
-    })
-    .get("/", function(req, res) {
-        gameroomDetails.find({}, function(err, data, next) {
-            res.json(data);
+    } catch (err) {
+        res.status(404).json({
+            uspesno: false,
+            poruka: err.message,
         });
-    })
-    .post("/", function(req, res, next) {
-        var GameroomDetails = new gameroomDetails(req.body);
-        GameroomDetails.save(function(err, entry) {
-            if (err) next(err);
-            res.json(entry);
-        });
-    })
-    .put("/:id", function(req, res, next) {
-        gameroomDetails.findById({
-            "_id": req.params.id
-        }, function(err, gameroomDetails) {
-            if (err) next(err);
-            gameroomDetails.set(req.body);
-            gameroomDetails.save(function(err, entry) {
-                if (err) next(err);
-                res.json(entry);
-            });
-        });
-    })
-    .delete("/:id", function(req, res, next) {
-        gameroomDetails.findOneAndRemove({
-            "_id": req.params.id
-        }, function(err, gameroom, successIndicator) {
-            if (err) next(err);
-            res.json(successIndicator);
-        });
-    });
+    }
+});
+app.get("/api/tim", async (req, res) => {
+    try {
+        const id = req.query.id;
+        const sviTimovi = await Tim.findById(id);
 
-app.use("/api/gameroomDetails", gameroomDetailsRouter);
-
-app.use(function(err, req, res, next) {
-    var message = err.message;
-    var error = err.error || err;
-    var status = err.status || 500;
-
-    res.status(status).json({
-        message: message,
-        error: error
-    });
+        res.json({
+            uspesno: true,
+            timovi: sviTimovi,
+        });
+    } catch (err) {
+        res.status(404).json({
+            uspesno: false,
+            poruka: err.message,
+        });
+    }
 });
 
-app.listen(port);
-console.log("Server is running and listening on port " + port);
+app.post("/api/timovi", async (req, res) => {
+    try {
+        const ime = req.body.ime;
+
+        const noviTim = new Tim({
+            ime: ime,
+        });
+
+        const sacuvanTim = await noviTim.save();
+
+        res.json({
+            uspesno: true,
+            tim: sacuvanTim,
+        });
+    } catch (err) {
+        res.status(404).json({
+            uspesno: false,
+            poruka: err.message,
+        });
+    }
+});
+
+app.delete("/api/timovi/:id", async (req, res) => {
+    try {
+        const timId = req.params.id;
+
+        const tim = await Tim.findById(timId);
+
+        const obrisanTim = await tim.delete();
+
+        res.json({
+            uspesno: true,
+            tim: obrisanTim,
+        });
+    } catch (err) {
+        res.status(404).json({
+            uspesno: false,
+            poruka: err.message,
+        });
+    }
+});
+
+app.post("/api/clan", async (req, res) => {
+    try {
+        const timId = req.body.idTima;
+
+        const tim = await Tim.findById(timId);
+
+        const noviClan = {
+            ime: req.body.ime,
+            prezime: req.body.prezime,
+            mail: req.body.mail,
+            skola: req.body.skola,
+        };
+
+        tim.clanovi.push(noviClan);
+
+        const sacuvanTim = await tim.save();
+
+        res.json({
+            uspesno: true,
+            tim: sacuvanTim,
+        });
+    } catch (err) {
+        res.status(404).json({
+            uspesno: false,
+            poruka: err.message,
+        });
+    }
+});
+
+app.post("/api/tehnologija", async (req, res) => {
+    try {
+        const timId = req.body.timId;
+        const tehnologija = req.body.tehnologija;
+
+        const tim = await Tim.findById(timId);
+
+        tim.omiljeneTehnologije.push(tehnologija);
+
+        const sacuvanTim = await tim.save();
+
+        res.json({
+            uspesno: true,
+            tim: sacuvanTim,
+        });
+    } catch (err) {
+        res.status(404).json({
+            uspesno: false,
+            poruka: err.message,
+        });
+    }
+});
+
+app.get("/api/proba", async (req, res) => {
+    try {
+        const timovi = await Tim.find({
+            omiljeneTehnologije: {
+                $all: ["Javascript", "PHP"],
+            },
+        });
+
+        res.json({
+            uspesno: true,
+            timovi: timovi,
+        });
+    } catch (err) {
+        res.status(404).json({
+            uspesno: false,
+            poruka: err.message,
+        });
+    }
+});

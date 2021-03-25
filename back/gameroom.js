@@ -9,7 +9,7 @@ var gameroomSchema = new mongoose.Schema({
     description: String,
     createdAt: Date,
     updatedAt: Date
-}, { collection: "Gamerooms" });
+}, { collection: "gamerooms" });
 
 gameroomSchema.pre("save", function (next) {
     var currentDate = new Date();
@@ -19,5 +19,4 @@ gameroomSchema.pre("save", function (next) {
     next();
 });
 
-var gameroomDetails = mongoose.model("gamerooms", gameroomSchema);
-module.exports = gameroomDetails;
+module.exports = mongoose.model("gameroom", gameroomSchema);
