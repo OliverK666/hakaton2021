@@ -43,33 +43,79 @@
                             </figure>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-lg-2">
-                            <p>Padno vreme: </br>
-                            Ponedeljak: 00:00 - 00:00</br>
-                            Utorak: 00:00 - 00:00</br>
-                            Sreda: 00:00 - 00:00</br>
-                            Cetvrtak: 00:00 - 00:00</br>
-                            Petak: 00:00 - 00:00</br>
-                        </div>
-                        <div class="col-xs-12 col-lg-2">
-                            <p>
-                            Cenovnik (racunari): </br>
-                            1 sat = 100 dinara </br>
-                            5 sati = 400 dinara </br>
-                            10 sati = 750 dinara </br>
-                            Cenovnik (PlayStation): </br>
-                            1 sat (2 joypada) = 180 dinara </br>
-                            1 ast (4 joypada) = 360 dinara </br>
-                            projektor = 300 dinara
-                            </p>
+                    <div class="col-xs-12 col-lg-6" style="margin-top: 50px;">
+                        <div class="tab">
+                            <button class="tablinks" onclick="openCity(event, 'Padno vreme')" id="defaultOpen">Padno vreme:</button>
+                            <button class="tablinks" onclick="openCity(event, 'Cenovnik')">Cenovnik: </button>
+                            <button class="tablinks" onclick="openCity(event, 'Kontakt')">Kontakt:</button>
+                            <button class="tablinks" onclick="openCity(event, 'Oprema')">Oprema:</button>
                         </div>
 
-                        <div class="col-xs-12 col-lg-2">
-                            <p>Kontakti: </br>
-                            telefon: 063 7030276 </br>
-                            mail: </p></br>
+                        <div id="Padno vreme" class="tabcontent">
+                            <h3>Padno vreme:</h3>
+                            <p></br>
+                                Ponedeljak: 00:00 - 00:00</br>
+                                Utorak: 00:00 - 00:00</br>
+                                Sreda: 00:00 - 00:00</br>
+                                Cetvrtak: 00:00 - 00:00</br>
+                                Petak: 00:00 - 00:00</br>
+                                Subota: 00:00 - 00:00 </br>
+                                Nedelja: 00:00 - 00:00
+                            </p>
                         </div>
-                </div>  
+                          
+                        <div id="Cenovnik" class="tabcontent">
+                            <h3>Cenovnik: </h3>
+                           <p>
+                                Cenovnik (racunari): </br>
+                                1 sat = 100 dinara </br>
+                                5 sati = 400 dinara </br>
+                                10 sati = 750 dinara </br>
+                                Cenovnik (PlayStation): </br>
+                                1 sat (2 joypada) = 180 dinara </br>
+                                1 ast (4 joypada) = 360 dinara </br>
+                                projektor = 300 dinara
+                            </p>
+                        </div>
+                          
+                        <div id="Kontakt" class="tabcontent">
+                            <h3>Kontakt:</h3>
+                           <p></br>
+                                Telefon:</br>
+                                Email:
+                            </p>
+                        </div>
+                          
+                        <div id="Oprema" class="tabcontent">
+                            <h3>Oprema:</h3>
+                           <p></br>
+                                PlayStation4 pro (4 mesta)</br>
+                                Racunar:</br>
+                                CPU - ryzen 3 2100x,</br>
+                                GPU - GTX 1080,</br>
+                                RAM - 16GB,</br>
+                            </p>
+                        </div>
+                          
+                          
+                        <script>
+                          function openCity(evt, cityName) {
+                            var i, tabcontent, tablinks;
+                            tabcontent = document.getElementsByClassName("tabcontent");
+                            for (i = 0; i < tabcontent.length; i++) {
+                              tabcontent[i].style.display = "none";
+                            }
+                            tablinks = document.getElementsByClassName("tablinks");
+                            for (i = 0; i < tablinks.length; i++) {
+                              tablinks[i].className = tablinks[i].className.replace(" active", "");
+                            }
+                            document.getElementById(cityName).style.display = "block";
+                            evt.currentTarget.className += " active";
+                          }
+                          document.getElementById("defaultOpen").click();
+                        </script>
+                    </div>
+                </div>
             </article>
         </section>
    
