@@ -23,14 +23,15 @@
         "id":1,
         "ime": "Kum",
         "slika": "img/Kum_pocetna.jpg",
-        "radno_vreme":"
-        Ponedeljak: 00:00 - 00:00</br>
-        Utorak: 00:00 - 00:00</br>
-        Sreda: 00:00 - 00:00</br>
-        Cetvrtak: 00:00 - 00:00</br>
-        Petak: 00:00 - 00:00</br>
-        Subota: 00:00 - 00:00</br>
-        Nedelja: 00:00 - 00:00",
+        "radno_vreme": {
+            "pon": "00:00 - 00:00",
+            "uto": "00:00 - 00:00",
+            "sre": "00:00 - 00:00",
+            "cet": "00:00 - 00:00",
+            "pet": "00:00 - 00:00",
+            "sub": "00:00 - 00:00",
+            "ned": "00:00 - 00:00"
+        },
         "cenovnik":"",
         "kontakt":"",
         "oprema":"",
@@ -54,14 +55,15 @@
         "id":3,
         "ime": "GG",
         "slika": "img/gg_pocetna.jpg",
-        "radno_vreme":"
-        Ponedeljak: 00:00 - 00:00</br>
-        Utorak: 00:00 - 00:00</br>
-        Sreda: 00:00 - 00:00</br>
-        Cetvrtak: 00:00 - 00:00</br>
-        Petak: 00:00 - 00:00</br>
-        Subota: 00:00 - 00:00</br>
-        Nedelja: 00:00 - 00:00",
+        "radno_vreme": {
+            "pon": "00:00 - 00:00",
+            "uto": "00:00 - 00:00",
+            "sre": "00:00 - 00:00",
+            "cet": "00:00 - 00:00",
+            "pet": "00:00 - 00:00",
+            "sub": "00:00 - 00:00",
+            "ned": "00:00 - 00:00"
+        },
         "cenovnik":"",
         "kontakt":"",
         "oprema":"",
@@ -73,14 +75,15 @@
         "id":4,
         "ime": "Mastal",
         "slika": "img/mastal_pocetna.jpg",
-        "radno_vreme":"
-        Ponedeljak: 00:00 - 00:00</br>
-        Utorak: 00:00 - 00:00</br>
-        Sreda: 00:00 - 00:00</br>
-        Cetvrtak: 00:00 - 00:00</br>
-        Petak: 00:00 - 00:00</br>
-        Subota: 00:00 - 00:00</br>
-        Nedelja: 00:00 - 00:00",
+        "radno_vreme": {
+            "pon": "00:00 - 00:00",
+            "uto": "00:00 - 00:00",
+            "sre": "00:00 - 00:00",
+            "cet": "00:00 - 00:00",
+            "pet": "00:00 - 00:00",
+            "sub": "00:00 - 00:00",
+            "ned": "00:00 - 00:00"
+        },
         "cenovnik":"",
         "kontakt":"",
         "oprema":"",
@@ -92,14 +95,15 @@
         "id":5,
         "ime": "X3M",
         "slika": "img/x3m_pocetna.jpg",
-        "radno_vreme":"
-        Ponedeljak: 07:00 - 00:00</br>
-        Utorak: 07:00 - 00:00</br>
-        Sreda: 07:00 - 00:00</br>
-        Cetvrtak: 07:00 - 00:00</br>
-        Petak: 07:00 - 00:00</br>
-        Subota: 07:00 - 00:00</br>
-        Nedelja: 07:00 - 00:00",
+        "radno_vreme": {
+            "pon": "07:00 - 00:00",
+            "uto": "07:00 - 00:00",
+            "sre": "07:00 - 00:00",
+            "cet": "07:00 - 00:00",
+            "pet": "07:00 - 00:00",
+            "sub": "07:00 - 00:00",
+            "ned": "07:00 - 00:00"
+        },
         "cenovnik":"",
         "kontakt":"",
         "oprema":"",
