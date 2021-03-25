@@ -1,0 +1,74 @@
+[
+    {
+        "id":0,
+        "ime": "PlayGround",
+        "slika": "img/playground_pocetna.jpg",
+        "radno_vreme":"",
+        "cenovnik":"",
+        "kontakt":"",
+        "oprema":"",
+        "opis":"",
+        "mapa":""
+
+    },
+    {
+        "id":1,
+        "ime": "PlayGround",
+        "slika": "img/playground_pocetna.jpg",
+        "radno_vreme":"",
+        "cenovnik":"",
+        "kontakt":"",
+        "oprema":"",
+        "opis":"",
+        "mapa":""
+
+    },
+    {
+        "id":2,
+        "ime": "PlayGround",
+        "slika": "img/playground_pocetna.jpg",
+        "radno_vreme":"",
+        "cenovnik":"",
+        "kontakt":"",
+        "oprema":"",
+        "opis":"",
+        "mapa":""
+
+    },
+    {
+        "id":3,
+        "ime": "PlayGround",
+        "slika": "img/playground_pocetna.jpg",
+        "radno_vreme":"",
+        "cenovnik":"",
+        "kontakt":"",
+        "oprema":"",
+        "opis":"",
+        "mapa":""
+
+    },
+    {
+        "id":4,
+        "ime": "PlayGround",
+        "slika": "img/playground_pocetna.jpg",
+        "radno_vreme":"",
+        "cenovnik":"",
+        "kontakt":"",
+        "oprema":"",
+        "opis":"",
+        "mapa":""
+
+    },
+    {
+        "id":0,
+        "ime": "PlayGround",
+        "slika": "img/playground_pocetna.jpg",
+        "radno_vreme":"",
+        "cenovnik":"",
+        "kontakt":"",
+        "oprema":"",
+        "opis":"",
+        "mapa":""
+
+    }
+]
