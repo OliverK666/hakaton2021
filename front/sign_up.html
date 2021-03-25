@@ -5,7 +5,9 @@
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <script  type="text/javascript" src="js/sign_up.js "></script>
   <link href="css/log_in.css" rel="stylesheet" type="text/css"/>
+  
   <title>Log in to Esports website</title>
 </head>
 <body>
@@ -20,11 +22,15 @@
     </div>
 
     <form>
-       <input type="text" id="email" class="fadeIn third" name="login" placeholder="e-mail">
-      <input type="text" id="username" class="fadeIn second" name="login" placeholder="username">
-      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-      <input type="text" id="confirm password" class="fadeIn third" name="login" placeholder="confirm password">
-      <input type="submit" class="fadeIn fourth" value="Sign up">
+       <input type="text" id="email" class="fadeIn third" name="login" required placeholder="e-mail"></input>
+       <span role="alert" id="emailError" aria-hidden="true">Email mora da bude oblika 'example@company'!</span>
+      <input type="text" id="username" class="fadeIn second" maxlength="12" minlength="4" name="login" required placeholder="username"></input>
+      <span role="alert" id="usernameError" aria-hidden="true">Username mora da ima izmedju 4 i 12 karaktera mala i velika slova, brojevi i _ (ne sme poceti brojevima i _)!</span>
+      <input type="text" id="password" maxlength="18" minlength="6" class="fadeIn third" name="login"required  placeholder="password"></input>
+      <span role="alert" id="passwordError"  aria-hidden="true">Password mora imati izmedju 6 i 18 karaktera brojeva ili slova!</span>
+      <input type="text" id="confirm password" maxlength="18" minlength="6"class="fadeIn third" name="login"required placeholder="confirm password"></input>
+      <span role="alert" id="emailError" aria-hidden="true">'Passwordi nisu isti!</span>
+      <input type="submit" class="fadeIn fourth" value="Sign up"></input>
     </form>
 
 
@@ -33,5 +39,62 @@
 
   </div>
 </div>
+<script >
+const email=new RegExp('.+@.+');
+const username= new RegExp('([a-zA-Z]+[_1-9]*[a-zA-Z]*){4,12}');
+const password=new RegExp('([a-zA-Z]*[1-9]*[a-zA-Z]*){6,18}');
+
+
+const submit = document.getElementById("submit");
+submit.addEventListener("click", validate);
+function validate(e) {
+  e.preventDefault();
+  const user_email=document.getElementById("email");
+  const user_username = document.getElementById("username");
+  const user_password = document.getElementById("password");
+  const user_con_password = document.getElementById("confirm password");
+  let valid = true;
+  if (!email.test(user_email))
+  {
+    console.log()
+    const emailError = document.getElementById("emailError");
+    emailError.classList.add("visible");
+    user_email.classList.add("invalid");
+    emailError.setAttribute("aria-hidden", false);
+    emailError.setAttribute("aria-invalid", true);
+    valid=false;
+  }
+  if (!username.test(user_username))
+  {
+    const usernameError = document.getElementById("usernameError");
+    emailError.classList.add("visible");
+    user_username.classList.add("invalid");
+    usernameError.setAttribute("aria-hidden", false);
+    usernameError.setAttribute("aria-invalid", true);
+    valid=false;
+  }
+  if (!password.test(user_password))
+  {
+    const passwordError = document.getElementById("passwordError");
+    passwordError.classList.add("visible");
+    user_password.classList.add("invalid");
+    passwordError.setAttribute("aria-hidden", false);
+    passwordError.setAttribute("aria-invalid", true);
+    valid=false;
+  }
+  if (user_password!=user_con_password)
+  {
+    const con_passwordError = document.getElementById("con_passwordError");
+    con_passwordError.classList.add("visible");
+    user_con_password.classList.add("invalid");
+    con_passwordError.setAttribute("aria-hidden", false);
+    con_passwordError.setAttribute("aria-invalid", true);
+    valid=false;
+  }
+
+  return valid;
+}
+</script>
+
 </body>
 </html>
