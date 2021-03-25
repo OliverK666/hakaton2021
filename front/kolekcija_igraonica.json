@@ -1,6 +1,5 @@
 [
     {
-        "id":0,
         "ime": "PlayGround",
         "slika": "img/playground_pocetna.jpg",
         "radno_vreme": {
@@ -20,7 +19,7 @@
 
     },
     {
-        "id":1,
+
         "ime": "Kum",
         "slika": "img/Kum_pocetna.jpg",
         "radno_vreme": {
@@ -40,7 +39,6 @@
 
     },
     {
-        "id":2,
         "ime": "Diablo",
         "slika": "img/diablo_pocetna.jpg",
         "radno_vreme":"",
@@ -52,7 +50,6 @@
 
     },
     {
-        "id":3,
         "ime": "GG",
         "slika": "img/gg_pocetna.jpg",
         "radno_vreme": {
@@ -72,7 +69,6 @@
 
     },
     {
-        "id":4,
         "ime": "Mastal",
         "slika": "img/mastal_pocetna.jpg",
         "radno_vreme": {
@@ -92,7 +88,6 @@
 
     },
     {
-        "id":5,
         "ime": "X3M",
         "slika": "img/x3m_pocetna.jpg",
         "radno_vreme": {
