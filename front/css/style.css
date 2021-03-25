@@ -305,47 +305,47 @@ input[type=radio] {
 
   }
 }
-#item-1:checked ~ .cards #igraonica-4,
-#item-2:checked ~ .cards #igraonica-5,
-#item-3:checked ~ .cards #igraonica-1,
-#item-4:checked ~ .cards #igraonica-2,
-#item-5:checked ~ .cards #igraonica-3 {
+#item-1:checked ~ .cards #diablo,
+#item-2:checked ~ .cards #mastal,
+#item-3:checked ~ .cards #x3m,
+#item-4:checked ~ .cards #kum,
+#item-5:checked ~ .cards #playground {
   transform: translatex(-80%) scale(.4);
   opacity: .6;
   z-index: -1;
 }
-#item-1:checked ~ .cards #igraonica-3,
-#item-2:checked ~ .cards #igraonica-4,
-#item-3:checked ~ .cards #igraonica-5,
-#item-4:checked ~ .cards #igraonica-1,
-#item-5:checked ~ .cards #igraonica-2 {
+#item-1:checked ~ .cards #playground,
+#item-2:checked ~ .cards #diablo,
+#item-3:checked ~ .cards #mastal,
+#item-4:checked ~ .cards #x3m,
+#item-5:checked ~ .cards #kum {
   transform: translatex(80%) scale(.4);
   opacity: .6;
   z-index: -1;
 }
-#item-1:checked ~ .cards #igraonica-5,
-#item-2:checked ~ .cards #igraonica-1,
-#item-3:checked ~ .cards #igraonica-2,
-#item-4:checked ~ .cards #igraonica-3,
-#item-5:checked ~ .cards #igraonica-4 {
+#item-1:checked ~ .cards #mastal,
+#item-2:checked ~ .cards #x3m,
+#item-3:checked ~ .cards #kum,
+#item-4:checked ~ .cards #playground,
+#item-5:checked ~ .cards #diablo {
   transform: translatex(-45%) scale(.7);
   opacity: .8;
   z-index: 0;
 }
-#item-1:checked ~ .cards #igraonica-2,
-#item-2:checked ~ .cards #igraonica-3,
-#item-3:checked ~ .cards #igraonica-4,
-#item-4:checked ~ .cards #igraonica-5,
-#item-5:checked ~ .cards #igraonica-1 {
+#item-1:checked ~ .cards #kum,
+#item-2:checked ~ .cards #playground,
+#item-3:checked ~ .cards #diablo,
+#item-4:checked ~ .cards #mastal,
+#item-5:checked ~ .cards #x3m {
   transform: translatex(45%) scale(.7);
   opacity: .8;
   z-index: 0;
 }
-#item-1:checked ~ .cards #igraonica-1,
-#item-2:checked ~ .cards #igraonica-2,
-#item-3:checked ~ .cards #igraonica-3,
-#item-4:checked ~ .cards #igraonica-4,
-#item-5:checked ~ .cards #igraonica-5 {
+#item-1:checked ~ .cards #x3m,
+#item-2:checked ~ .cards #kum,
+#item-3:checked ~ .cards #playground,
+#item-4:checked ~ .cards #diablo,
+#item-5:checked ~ .cards #mastal {
   transform: translatex(0) scale(1);
   opacity: 1;
   z-index: 1;
