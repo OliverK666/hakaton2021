@@ -9,12 +9,12 @@
 	<link href="css/style.css" rel="stylesheet" type="text/css"/>
   	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
   	<script src="js/events.js"  type="text/javascript"></script>
-  	<title>Esport site homepage</title>
+  	<title>ETmina ESport events</title>
 </head>
 <body>
 	<header class="site-header Navigation_Bar_Border" >
       <div class="wrapper site-header__wrapper">
-        <a href="index.html"><img src="" alt="website icon"></a>
+        <a href="index.html"><img src="img/etmina-logo.png" alt="website icon" width="260" height="60"></a>
         <nav class="nav">
           <button class="nav__toggle" aria-expanded="false" type="button">
             menu
@@ -28,81 +28,57 @@
         </nav>
       </div>
     </header>
-    <script >const email=new RegExp('.+@.+');
-const username= new RegExp(([a-zA-Z]+[_1-9]*[a-zA-Z]*){4,12});
-const password=new RegExp(([a-zA-Z]*[1-9]*[a-zA-Z]*){6,18});
-
-
-const submit = document.getElementById("submit");
-submit.addEventListener("click", validate);
-function validate(e) {
-  e.preventDefault();
-  const user_email=document.getElementById("email");
-  const user_username = document.getElementById("username");
-  const user_password = document.getElementById("password");
-  const user_con_password = document.getElementById("confirm password");
-  let valid = true;
-  if (!email.test(user_email))
-  {
-  	console.log()
-  	const emailError = document.getElementById("emailError");
-  	emailError.classList.add("visible");
-    user_email.classList.add("invalid");
-    emailError.setAttribute("aria-hidden", false);
-    emailError.setAttribute("aria-invalid", true);
-    valid=false;
-  }
-  if (!username.test(user_username))
-  {
-  	const usernameError = document.getElementById("usernameError");
-  	emailError.classList.add("visible");
-    user_username.classList.add("invalid");
-    usernameError.setAttribute("aria-hidden", false);
-    usernameError.setAttribute("aria-invalid", true);
-    valid=false;
-  }
-  if (!password.test(user_password))
-  {
-  	const passwordError = document.getElementById("passwordError");
-  	passwordError.classList.add("visible");
-    user_password.classList.add("invalid");
-    passwordError.setAttribute("aria-hidden", false);
-    passwordError.setAttribute("aria-invalid", true);
-    valid=false;
-  }
-  if (user_password!=user_con_password)
-  {
-  	const con_passwordError = document.getElementById("con_passwordError");
-  	con_passwordError.classList.add("visible");
-    user_con_password.classList.add("invalid");
-    con_passwordError.setAttribute("aria-hidden", false);
-    con_passwordError.setAttribute("aria-invalid", true);
-    valid=false;
-  }
-
-  return valid;
-}
-</script>
-	<!--<footer>
-			<div >
-				<div >
-					<nav class="footer-nav">
-						<a href="index.html">Home</a> |
-						<a href="iphone_11_pro.html">iPhone 11 PRO</a> |
-						<a href="iphone_se.html">iPhone SE</a> |
-						<a href="iphone_xr.html">iPhone XR</a> |
-						<a href="mailto:kojic.sara@jjzmaj.edu.rs">Kontakt</a>
-					</nav>
-			    </div>
+    <script >
+    	mixin card(classname, href, title, description)
+	.card-container 
+		.card(class=classname)
+			a(href=href)
+				.card--display
+					h2=title
+				.card--hover
+					h2=title
+					p=description
+					p.link Dodaj me
+			.card--border
+			
++card(
+'',
+'event1', 
+'Event 1', 
+'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at est orci. Nam molestie pellentesque mi nec lacinia. Cras volutpat arcu sit amet elit sodales, nec volutpat velit bibendum.')
++card(
+'', 
+'event2', 
+'Event2', 
+'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at est orci. Nam molestie pellentesque mi nec lacinia. Cras volutpat arcu sit amet elit sodales, nec volutpat velit bibendum.')
++card(
+'', 
+'event3', 
+'Event 3', 
+'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at est orci. Nam molestie pellentesque mi nec lacinia. Cras volutpat arcu sit amet elit sodales, nec volutpat velit bibendum.')
++card(
+'',
+'event4', 
+'Event 4', 
+'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at est orci. Nam molestie pellentesque mi nec lacinia. Cras volutpat arcu sit amet elit sodales, nec volutpat velit bibendum.')
++card(
+'',
+'event5', 
+'Event5', 
+'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at est orci. Nam molestie pellentesque mi nec lacinia. Cras volutpat arcu sit amet elit sodales, nec volutpat velit bibendum.')
+    </script>
+    
+	<footer>
+			<div>
+				<nav class="footer-nav">
+					<a href="index.html">Home</a> |
+					<a href="igraonice.html">Igraonice</a> |
+					<a href="events.html">Events</a> |
+					<a href="log_in.html">Login</a> |
+					<a href="mailto:info@etmina.org">Kontakt</a>
+				</nav>
 			</div>
-			<div >
-				<div >
-
-					<p id="prva-stranica-p"></br>Author: Sara Kojic<br /></br>
-					<a href="mailto:kojic.sara@jjzmaj.edu.rs">kojic.sara@jjzmaj.edu.rs</a></p>
-				</div>
-			</div>
-		</footer>-->
+		</footer>
 	<script src="js/index.js"></script>
 </body>
 </html>
