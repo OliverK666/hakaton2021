@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const connectDB = require("./back/database");
 const gameroom = require("./back/gameroom");
-//const event = require("./back/event");
+const event = require("./back/event");
 
 const port = 3000;
 
@@ -13,48 +13,72 @@ app.listen(port, () => {
 connectDB();
 app.use(express.static("front"));
 
-app.get("/api/timovi", async (req, res) => {
+app.get("/api/gamerooms", async (req, res) => {
     try {
-        const sviTimovi = await Tim.find();
-
+        const allGamerooms = await gameroom.find();
         res.json({
-            uspesno: true,
-            timovi: sviTimovi,
+            success: true,
+            gamerooms: allGamerooms
         });
     } catch (err) {
         res.status(404).json({
-            uspesno: false,
-            poruka: err.message,
+            success: false,
+            message: err.message
         });
     }
 });
-app.get("/api/tim", async (req, res) => {
+app.get("/api/gamerooms/:id", async (req, res) => {
     try {
-        const id = req.query.id;
-        const sviTimovi = await Tim.findById(id);
-
+        const gameroomId = req.params.id;
+        const specificGameroom = await gameroom.findById(gameroomId);
         res.json({
-            uspesno: true,
-            timovi: sviTimovi,
+            success: true,
+            gameroom: specificGameroom
         });
     } catch (err) {
         res.status(404).json({
-            uspesno: false,
-            poruka: err.message,
+            success: false,
+            message: err.message
         });
     }
 });
 
-app.post("/api/timovi", async (req, res) => {
+app.get("/api/events", async (req, res) => {
     try {
-        const ime = req.body.ime;
-
+        const allEvents = await event.find();
+        res.json({
+            success: true,
+            events: allEvents
+        });
+    } catch (err) {
+        res.status(404).json({
+            success: false,
+            message: err.message
+        });
+    }
+});
+app.get("/api/events/:id", async (req, res) => {
+    try {
+        const eventId = req.params.id;
+        const specificEvent = await event.findById(eventId);
+        res.json({
+            success: true,
+            event: specificEvent
+        });
+    } catch (err) {
+        res.status(404).json({
+            success: false,
+            message: err.message
+        });
+    }
+});
+app.post("/api/events", async (req, res) => {
+    try {
+        const name = req.body.name;
         const noviTim = new Tim({
             ime: ime,
         });
-
         const sacuvanTim = await noviTim.save();
-
         res.json({
             uspesno: true,
             tim: sacuvanTim,
@@ -66,28 +90,24 @@ app.post("/api/timovi", async (req, res) => {
         });
     }
 });
-
-app.delete("/api/timovi/:id", async (req, res) => {
+app.delete("/api/events/:id", async (req, res) => {
     try {
-        const timId = req.params.id;
-
-        const tim = await Tim.findById(timId);
-
-        const obrisanTim = await tim.delete();
-
+        const eventId = req.params.id;
+        const specificEvent = await event.findById(eventId);
+        const deletedEvent = await specificEvent.delete();
         res.json({
-            uspesno: true,
-            tim: obrisanTim,
+            success: true,
+            event: deletedEvent
         });
     } catch (err) {
         res.status(404).json({
-            uspesno: false,
-            poruka: err.message,
+            success: false,
+            message: err.message
         });
     }
 });
 
-app.post("/api/clan", async (req, res) => {
+/*app.post("/api/clan", async (req, res) => {
     try {
         const timId = req.body.idTima;
 
@@ -157,4 +177,4 @@ app.get("/api/proba", async (req, res) => {
             poruka: err.message,
         });
     }
-});
+});*/
